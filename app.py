@@ -5,4 +5,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    print(request.headers)
+    fdid = request.headers.get('x-azure-fdid')
+    sfdid = request.headers.get('sx-azure-fdid')
+    return f"x-azure-fdid: {fdid}\nsx-azure-fdid: {sfdid}\n"
