@@ -1,7 +1,6 @@
 version: 1
 
 pre-build: |
-    apt install python
     pip install -r requirements.txt
 
 #post-build: |
