@@ -9,3 +9,4 @@ pre-build: |
 #    python manage.py migrate
 
 run: flask run
+
