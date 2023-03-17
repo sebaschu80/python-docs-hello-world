@@ -15,6 +15,7 @@ def index():
 
     return str
 
+
 @app.route("/post", methods=['POST'])
 def repost():
     data = json.loads(request.data)
