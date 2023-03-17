@@ -2,10 +2,11 @@ from flask import Flask, request, json
 import requests
 import socket
 
-
 app = Flask(__name__)
 
-@app.route("/")
+
+@app.route("/app/info")
+@app.route("/auth/info")
 def index():
     hostname = socket.gethostname()
 
@@ -16,7 +17,8 @@ def index():
     return str
 
 
-@app.route("/post", methods=['POST'])
+@app.route("/app/post", methods=['POST'])
+@app.route("/auth/post", methods=['POST'])
 def repost():
     data = json.loads(request.data)
     x = requests.get(data["url"])
